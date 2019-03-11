@@ -1,10 +1,10 @@
 # Akka-Streams-desafio-backend-Hash
 
-This is a rework of a project of mine using Akka Streams. Very fun to do it so far, and Akka is some really good tech. Akka is assyncronous by default and free of locks and so on which by definition are slower in orders of magnitude.
+This is a rework of a project of mine using Akka Streams. Very fun to do it so far, and Akka is some really good tech. Akka is assyncronous by default and free of locks and so on which by definition are slower in orders of magnitude. The tests are implemented in * the src/test/scala/products *.
 
 # How it works
 
-I have 4 objects that in the Akka context we call Domains, as follows:
+I have 4 objects that in the Akka context we call Domains in the * src/main/scala/products * folder, as follows:
 
 ```Scala
   object DiscountDomain {
@@ -74,7 +74,7 @@ object ServiceDomain {
       userSource ~> serviceComponent.in0
       productSource ~> serviceComponent.in1
          
-         // Returns the output for the upstream component
+         // Returns the output for the downstream component
       SourceShape(serviceComponent.out0)
    })
 }
