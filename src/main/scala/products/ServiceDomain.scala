@@ -60,7 +60,7 @@ object ServiceDomain {
       userSource ~> serviceComponent.in0
       productSource ~> serviceComponent.in1
          
-         // Returns the output for the upstream component
+         // Returns the output for the downstream component
       SourceShape(serviceComponent.out0)
    })
 }
