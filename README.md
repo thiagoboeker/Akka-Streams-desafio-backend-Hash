@@ -82,7 +82,7 @@ object ServiceDomain {
 ```
 
 In this ServiceDomain we define our main Graph using the GraphDSL akka component. So we first define a custom shape in the ServiceShape class that will have two input ports and one output port. Then we define a ServiceComponent class that will serve as a open shape from a Source. The flow of the data in the graph is assigned by the __\~>__ operator from the GraphDSL.
-And finally a runnable graph as a Source in the ServiceGraphV1 function which takes some assets, transform them in Sources as roll out the data in the ServiceComponent.
+And finally a runnable graph as a Source in the ServiceGraphV1 function which takes some assets, transform them in Sources and roll out the data in the ServiceComponent.
 
 # Wrap
 
