@@ -1,6 +1,6 @@
 # Akka-Streams-desafio-backend-Hash
 
-This is a rework of a project of mine using Akka Streams. Very fun to do it so far, and Akka is some really good tech. Akka is assyncronous by default and free of locks and so on which by definition are slower in orders of magnitude. The tests are implemented in __the src/test/scala/products__.
+This is a rework of a project of mine using Akka Streams. Very fun to do it so far, and Akka is some really good tech. Akka is assyncronous by default and free of locks and so on which by definition are slower in orders of magnitude. The tests are implemented in  the __src/test/scala/products__.
 
 # How it works
 
@@ -21,7 +21,7 @@ I have 4 objects that in the Akka context we call Domains in the __src/main/scal
   }
 ```
 
-These domains have all the logic and components isolated and the Domain the wraps all the service is the ServiceDomain as this:
+These domains have all the logic and components isolated and the Domain that wraps all the service is the ServiceDomain:
 
 ```Scala
 object ServiceDomain {
@@ -81,7 +81,7 @@ object ServiceDomain {
 
 ```
 
-In this ServiceDomain we define our main Graph using the GraphDSL akka component. So we first define a custom shape in the ServiceShape class that will have two input ports and one output port. Then we define a ServiceComponent class that will serve as a open shape from a Source. The flow of the data in the graph is assigned by the __~>__ operator from the GraphDSL.
+In this ServiceDomain we define our main Graph using the GraphDSL akka component. So we first define a custom shape in the ServiceShape class that will have two input ports and one output port. Then we define a ServiceComponent class that will serve as a open shape from a Source. The flow of the data in the graph is assigned by the __\~>__ operator from the GraphDSL.
 And finally a runnable graph as a Source in the ServiceGraphV1 function which takes some assets, transform them in Sources as roll out the data in the ServiceComponent.
 
 # Wrap
